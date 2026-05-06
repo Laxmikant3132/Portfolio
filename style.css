@@ -341,11 +341,24 @@ h1, h2, h3, h4 {
 
 .menu-toggle span {
     display: block;
-    width: 30px;
+    width: 25px;
     height: 2px;
     background: var(--text-primary);
     transition: var(--transition-smooth);
     border-radius: 2px;
+}
+
+/* Hamburger to X Animation */
+.nav-links.active ~ .menu-toggle span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.nav-links.active ~ .menu-toggle span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-links.active ~ .menu-toggle span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 /* Hero Section */
@@ -1352,28 +1365,28 @@ h1, h2, h3, h4 {
 /* Mobile Responsiveness Enhanced */
 @media (max-width: 992px) {
     .nav-container {
-        padding: 0 2rem;
+        padding: 0 1.5rem;
     }
     
     .menu-toggle {
         display: flex;
+        position: relative;
+        z-index: 2001;
     }
 
     .nav-links {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 80%;
+        width: 100%;
         height: 100vh;
-        background: rgba(10, 10, 12, 0.95);
-        backdrop-filter: blur(25px);
+        background: #0a0a0c;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 3rem;
-        transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 1000;
-        border-left: 1px solid rgba(255, 255, 255, 0.05);
+        gap: 2.5rem;
+        transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        z-index: 2000;
     }
 
     .nav-links.active {
@@ -1381,132 +1394,106 @@ h1, h2, h3, h4 {
     }
 
     .nav-links a {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+    }
+
+    .nav-cta {
+        padding: 1rem 3rem;
+        font-size: 1.2rem;
     }
     
     .hero-split {
         flex-direction: column-reverse;
         text-align: center;
-        gap: 4rem;
-        padding-top: 6rem;
+        padding-top: 5rem;
+        gap: 3rem;
     }
 
     .hero-info {
-        text-align: center;
+        order: 2;
     }
 
-    .hero-tagline {
-        margin: 0 auto 2.5rem;
-    }
-
-    .hero-btns {
-        justify-content: center;
+    .hero-visual {
+        order: 1;
+        margin-bottom: 2rem;
     }
 
     .profile-frame-large {
-        width: 280px;
-        height: 380px;
-    }
-
-    .bento-skills {
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: auto;
-    }
-
-    .skill-react, .skill-git {
-        grid-column: span 2;
-    }
-    
-    .project-reveal-item {
-        flex-direction: column !important;
-        gap: 3rem;
-        margin-bottom: 6rem;
-    }
-    
-    .timeline-line {
-        left: 20px;
-    }
-    
-    .timeline-item {
-        width: 100%;
-        text-align: left !important;
-        padding-left: 50px !important;
-        padding-right: 0 !important;
-        margin-bottom: 4rem;
-    }
-    
-    .timeline-dot {
-        left: 0 !important;
-    }
-
-    .year-marker {
-        font-size: 4rem;
-        top: -30px;
-    }
-
-    .timeline-item.left .year-marker,
-    .timeline-item.right .year-marker {
-        left: 50px;
-        right: auto;
-    }
-
-    .timeline-img {
-        height: 300px;
-    }
-
-    .split-layout {
-        flex-direction: column;
-        gap: 4rem;
-    }
-
-    .about-text {
-        text-align: center;
-    }
-
-    .about-text .section-title {
-        text-align: center;
-    }
-}
-
-@media (max-width: 600px) {
-    .nav-links {
-        width: 100%;
+        width: 240px;
+        height: 320px;
     }
 
     .hero-name {
-        font-size: 3rem;
-    }
-
-    .role-container {
-        font-size: 1.4rem;
+        font-size: 3.5rem;
     }
 
     .bento-skills {
         grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        gap: 1rem;
     }
 
     .skill-react, .skill-logic, .skill-db, .skill-git, .skill-design {
         grid-column: span 1;
+        padding: 2rem;
+    }
+
+    .skill-react {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .project-reveal-item {
+        flex-direction: column !important;
+        gap: 2.5rem;
+        margin-bottom: 5rem;
+    }
+
+    .project-content-side {
+        text-align: center;
+    }
+
+    .proj-badges, .project-links-minimal {
+        justify-content: center;
+    }
+    
+    .timeline-line {
+        left: 15px;
+    }
+    
+    .timeline-item {
+        padding-left: 40px !important;
+    }
+    
+    .year-marker {
+        font-size: 3.5rem;
+    }
+
+    .timeline-img {
+        height: 250px;
+    }
+
+    .achievements-track {
+        gap: 1.5rem;
     }
 
     .achievement-item {
-        min-width: 300px;
-        height: auto;
+        min-width: 85vw;
     }
+}
 
-    .achievement-item .timeline-img {
-        height: 200px;
-    }
-
-    .contact-inner {
-        padding: 0 1rem;
-    }
-
-    .social-links {
-        gap: 2rem;
+@media (max-width: 600px) {
+    .hero-name {
+        font-size: 2.8rem;
     }
 
     .section-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+    }
+
+    .premium-text {
+        font-size: 1.1rem;
     }
 }
