@@ -1544,11 +1544,18 @@ h1, h2, h3, h4 {
     }
 
     .achievements-track {
-        gap: 1.5rem;
+        gap: 1.2rem;
+        padding: 1.5rem 0.5rem;
     }
 
     .achievement-item {
-        min-width: 85vw;
+        min-width: 90vw;
+        height: 480px; /* More compact for mobile */
+        border-radius: 20px;
+    }
+
+    .achievement-item .timeline-img {
+        height: 180px; /* Adjusting photo height inside cards */
     }
 }
 
