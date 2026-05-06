@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laxmikant Talli | Frontend Developer & Tech Enthusiast</title>
+    <meta name="description" content="Portfolio of Laxmikant Talli - BCA Student, Frontend Developer, and Tech Enthusiast.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="loader-logo">LT</div>
+            <div class="loader-circle"></div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Galaxy Space Background -->
+    <div class="galaxy-background">
+        <div class="stars stars-small"></div>
+        <div class="stars stars-medium"></div>
+        <div class="stars stars-large"></div>
+        <div class="nebulae">
+            <div class="nebula nebula-1"></div>
+            <div class="nebula nebula-2"></div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">LT<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#journey">Journey</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#projects">Work</a></li>
+                <li><a href="#contact" class="nav-cta">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero section-reveal">
+            <div class="hero-background">
+                <div class="mesh-gradient"></div>
+            </div>
+        <div class="container hero-split">
+            <div class="hero-info reveal">
+                <h2 class="hero-greeting">Hi, I'm</h2>
+                <h1 class="hero-name">Laxmikant Talli</h1>
+                <div class="role-container">
+                    <span class="role-text" id="typed-role">BCA Student</span>
+                    <span class="cursor-line">|</span>
+                </div>
+                <p class="hero-tagline">Turning ideas into reality through code.</p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn btn-primary">View Work</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+            <!-- Profile Visual -->
+            <div class="hero-visual reveal">
+                <div class="profile-frame-large">
+                    <img src="profile.png" alt="Laxmikant Talli">
+                    <div class="visual-glow"></div>
+                </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- Journey Section -->
+        <section id="journey" class="journey section-reveal">
+            <div class="journey-bg">
+                <div class="mesh-sphere" style="top: 10%; left: -10%;"></div>
+                <div class="mesh-sphere-2" style="top: 40%; right: -5%;"></div>
+                <div class="mesh-sphere" style="bottom: 10%; left: 5%;"></div>
+            </div>
+            <div class="container">
+                <h2 class="section-title">My Journey</h2>
+                <div class="timeline">
+                    <div class="timeline-line"></div>
+                    
+                    <div class="timeline-item left reveal">
+                        <div class="timeline-dot">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <div class="year-marker">2022</div>
+                        <div class="timeline-content">
+                            <h3>Started learning with friends</h3>
+                            <p>The spark that ignited my passion for technology.</p>
+                            <div class="timeline-img">
+                                <img src="journey1.png" alt="Journey with friends">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item right reveal">
+                        <div class="timeline-dot">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <div class="year-marker">2023</div>
+                        <div class="timeline-content">
+                            <h3>Started deep coding journey</h3>
+                            <p>Won first place in my very first coding event, which solidified my passion for logic and problem-solving.</p>
+                            <div class="timeline-img">
+                                <img src="journey2.png" alt="Winning my first event">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item left reveal">
+                        <div class="timeline-dot">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div class="year-marker">2023</div>
+                        <div class="timeline-content">
+                            <h3>Secured 3rd Rank in 3rd Sem</h3>
+                            <p>Academic excellence as a top-performer in BCA with a 9.06 SGPA, building a solid technical and analytical foundation.</p>
+                            <div class="timeline-img">
+                                <img src="journey3.png" alt="3rd Sem Rank Achievement">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item right reveal">
+                        <div class="timeline-dot">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <div class="year-marker">2024</div>
+                        <div class="timeline-content">
+                            <h3>UiPath Student Champion</h3>
+                            <p>Recognized for excellence in automation and recognized as a Student Developer Champion by UiPath.</p>
+                            <div class="timeline-img">
+                                <img src="journey4.png" alt="UiPath Student Champion">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about section-reveal">
+            <div class="container split-layout">
+                <div class="about-text reveal">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="premium-text">
+                        I am a passionate BCA student focused on web development, creativity, and continuous growth through projects and competitions. I believe in the power of code to solve problems and create meaningful experiences.
+                    </p>
+                </div>
+                <div class="about-image reveal">
+                    <div class="image-wrapper">
+                        <img src="profile.png" alt="Laxmikant Talli">
+                        <div class="image-overlay"></div>
+                        
+                        <!-- Tech Orbs Orbit -->
+                        <div class="tech-orbit">
+                            <div class="orb orb-1"><i class="fa-brands fa-react"></i></div>
+                            <div class="orb orb-2"><i class="fa-brands fa-js"></i></div>
+                            <div class="orb orb-3"><i class="fa-brands fa-java"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section id="skills" class="skills section-reveal">
+            <div class="container">
+                <h2 class="section-title">Technical Expertise</h2>
+                <div class="bento-skills">
+                    <div class="bento-card skill-react reveal">
+                        <div class="glow"></div>
+                        <div class="bento-icon"><i class="fa-brands fa-react"></i></div>
+                        <div class="bento-content">
+                            <h3>Frontend & UI</h3>
+                            <p>Pixel-perfect React.js architecture with high-end animations and modern UI/UX patterns.</p>
+                            <div class="skill-tags">
+                                <span>React</span>
+                                <span>Hooks</span>
+                                <span>Context</span>
+                                <span>GSAP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bento-card skill-logic reveal">
+                        <div class="glow"></div>
+                        <div class="bento-icon"><i class="fa-solid fa-brain"></i></div>
+                        <div class="bento-content">
+                            <h3>Backend & Logic</h3>
+                            <p>Data structures and algorithmic problem solving in Java and C Programming.</p>
+                        </div>
+                    </div>
+                    <div class="bento-card skill-db reveal">
+                        <div class="glow"></div>
+                        <div class="bento-icon"><i class="fa-solid fa-database"></i></div>
+                        <div class="bento-content">
+                            <h3>DBMS</h3>
+                            <p>Efficient database management and relational data modeling with SQL.</p>
+                        </div>
+                    </div>
+                    <div class="bento-card skill-git reveal">
+                        <div class="glow"></div>
+                        <div class="bento-icon"><i class="fa-brands fa-git-alt"></i></div>
+                        <div class="bento-content">
+                            <h3>DevOps & Tools</h3>
+                            <p>Clean version control workflows and efficient development environments.</p>
+                        </div>
+                    </div>
+                    <div class="bento-card skill-design reveal">
+                        <div class="glow"></div>
+                        <div class="bento-icon"><i class="fa-solid fa-swatchbook"></i></div>
+                        <div class="bento-content">
+                            <h3>Modern Styling</h3>
+                            <p>Next-gen responsive layouts with vanilla CSS3 and storytelling animations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="achievements section-reveal">
+            <div class="container">
+                <h2 class="section-title">Technical Achievements</h2>
+                <div class="achievements-track">
+                    <div class="achievement-item reveal">
+                        <div class="timeline-img">
+                            <img src="achievement1.png" alt="Hackathon Winner">
+                        </div>
+                        <div class="ach-content">
+                            <h4>Coding Event Winner</h4>
+                            <p>Secured 1st Place in a regional technical event competition.</p>
+                        </div>
+                    </div>
+                    <div class="achievement-item reveal">
+                        <div class="timeline-img">
+                            <img src="journey3.png" alt="3rd Sem Rank">
+                        </div>
+                        <div class="ach-content">
+                            <h4>3rd Sem Rank Holder</h4>
+                            <p>Secured 3rd Rank in BCA 3rd Sem with a 9.06 SGPA at KLE Society's BCA College.</p>
+                        </div>
+                    </div>
+                    <div class="achievement-item reveal">
+                        <div class="timeline-img">
+                            <img src="journey4.png" alt="UiPath Champion">
+                        </div>
+                        <div class="ach-content">
+                            <h4>UiPath Student Champion</h4>
+                            <p>Recognized for excellence in automation and RPA developer community contributions.</p>
+                        </div>
+                    </div>
+                    <div class="achievement-item reveal">
+                        <div class="timeline-img">
+                            <img src="hackathon1.jpg" alt="Innoverse 2.0 Winner">
+                        </div>
+                        <div class="ach-content">
+                            <h4>National Hackathon - Innoverse 2.0</h4>
+                            <p>Participated and excelled in the 24-hours National Level Hackathon at Gogte Institute of Technology.</p>
+                        </div>
+                    </div>
+                    <div class="achievement-item reveal">
+                        <div class="timeline-img">
+                            <img src="hackathon2.jpg" alt="Hackfest 2025 Winner">
+                        </div>
+                        <div class="ach-content">
+                            <h4>National Hackathon Winner - Hackfest 2025</h4>
+                            <p>Won 1st Place at S. G. Balekundri Institute of Technology National Level Hackathon.</p>
+                        </div>
+                    </div>
+                    <div class="achievement-item reveal">
+                        <div class="timeline-img">
+                            <img src="hackathon3.jpg" alt="Hackaur 2025 Runner Up">
+                        </div>
+                        <div class="ach-content">
+                            <h4>2nd Prize - National Hackathon</h4>
+                            <p>Secured 2nd Prize at Hackaur National Level Hackathon Competition.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects section-reveal">
+            <div class="container">
+                <h2 class="section-title">Selected Work</h2>
+                <div class="project-showcase">
+                    <div class="project-reveal-item reveal">
+                        <div class="project-image-side">
+                            <div class="project-preview-frame">
+                                <img src="project1.png" alt="GeneVision - AI Bioinformatics Platform">
+                            </div>
+                        </div>
+                        <div class="project-content-side">
+                            <span class="proj-number">01</span>
+                            <h3>GeneVision</h3>
+                            <p>An AI-powered Bioinformatics platform for advanced DNA & protein analysis. Featuring 3D visualization and intelligent sequence insights.</p>
+                            <div class="proj-badges">
+                                <span>AI/ML</span>
+                                <span>Bioinformatics</span>
+                                <span>React</span>
+                                <span>Vercel</span>
+                            </div>
+                            <div class="project-links-minimal">
+                                <a href="https://gene-vision3.vercel.app/" target="_blank" class="btn-link">Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                <a href="https://github.com/Laxmikant3132/" target="_blank" class="btn-link">Source Code <i class="fa-brands fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-reveal-item reveal reverse">
+                        <div class="project-content-side">
+                            <span class="proj-number">02</span>
+                            <h3>MovieZone</h3>
+                            <p>A high-performance cinematic entertainment platform. Featuring dynamic movie categorized fetching, trending lists, and responsive design for an ultimate viewing experience.</p>
+                            <div class="proj-badges">
+                                <span>React</span>
+                                <span>TMDB API</span>
+                                <span>Netlify</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="project-links-minimal">
+                                <a href="https://classy-heliotrope-3b6bfc.netlify.app/" target="_blank" class="btn-link">Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                <a href="https://github.com/Laxmikant3132/" target="_blank" class="btn-link">Source Code <i class="fa-brands fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-image-side">
+                            <div class="project-preview-frame">
+                                <img src="project2.png" alt="MovieZone Entertainment Platform">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Coming Soon Placeholder -->
+                <div class="projects-footer reveal">
+                    <div class="coming-soon-card">
+                        <div class="glow-sphere"></div>
+                        <h3>More Projects in the Lab...</h3>
+                        <p>I me constantly building and experimenting with new technologies. Stay tuned for more innovative solutions!</p>
+                        <a href="https://github.com/Laxmikant3132/" target="_blank" class="btn btn-secondary">
+                            <i class="fa-brands fa-github"></i> Follow on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section-reveal">
+            <div class="container">
+                <div class="contact-inner">
+                    <div class="contact-header">
+                        <h2 class="section-title">Get In Touch</h2>
+                        <p>Have an idea or a project? Let's talk about it.</p>
+                    </div>
+                    <form id="contact-form" class="reveal">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder=" " required>
+                            <label for="name">Your Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder=" " required>
+                            <label for="email">Your Email</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary submit-btn">
+                            <span>Send Message</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                        <div id="form-status" class="form-status"></div>
+                    </form>
+                    <div class="social-links reveal">
+                        <a href="https://www.linkedin.com/in/laxmikant-talli" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://github.com/Laxmikant3132/" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="mailto:laxmikanttalli303@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Laxmikant Talli. Crafted with passion.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
