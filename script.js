@@ -1,4 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
+    /* --- Mobile Menu Toggle (TOP PRIORITY) --- */
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinksContainer = document.querySelector('.nav-links');
+    
+    if (menuToggle && navLinksContainer) {
+        menuToggle.addEventListener('click', () => {
+            navLinksContainer.classList.toggle('active');
+        });
+
+        // Close menu when any link inside is clicked
+        navLinksContainer.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A' || e.target.parentElement.tagName === 'A') {
+                navLinksContainer.classList.remove('active');
+            }
+        });
+    }
+
     /* --- Preloader Handling --- */
     window.addEventListener('load', () => {
         const preloader = document.getElementById('preloader');
@@ -228,20 +245,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    /* --- Mobile Menu Toggle --- */
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinksContainer = document.querySelector('.nav-links');
-    
-    if (menuToggle) {
-        menuToggle.addEventListener('click', () => {
-            navLinksContainer.classList.toggle('active');
-        });
-    }
-
-    // Auto-close menu when a link is clicked
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinksContainer.classList.remove('active');
         });
     });
 });
