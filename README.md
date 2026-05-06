@@ -3,7 +3,7 @@
 A premium, high-performance personal portfolio website built for **Laxmikant Talli**, a BCA student and Frontend Developer. This project showcases a modern design with advanced animations, a glassmorphism UI, and a fully functional contact system.
 
 ## 🚀 Live Demo
-Check out the live project here: [https://laxmikant3132.github.io/](https://laxmikant3132.github.io/) (Replace with your actual link)
+Check out the live project here: [https://laxmikant3132.github.io/Portfolio/](https://laxmikant3132.github.io/Portfolio/)
 
 ## ✨ Key Features
 - **Modern Galaxy Background**: Interactive space-themed background with nebulae and moving stars.
