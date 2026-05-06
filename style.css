@@ -329,6 +329,25 @@ h1, h2, h3, h4 {
     border-radius: 50px;
 }
 
+/* Mobile Menu Toggle Styling */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 10px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: var(--text-primary);
+    transition: var(--transition-smooth);
+    border-radius: 2px;
+}
+
 /* Hero Section */
 .hero {
     min-height: 100vh;
@@ -1330,21 +1349,46 @@ h1, h2, h3, h4 {
     transform: translateY(0);
 }
 
-/* Mobile Responsiveness */
+/* Mobile Responsiveness Enhanced */
 @media (max-width: 992px) {
     .nav-container {
         padding: 0 2rem;
     }
     
+    .menu-toggle {
+        display: flex;
+    }
+
     .nav-links {
-        display: none; /* Add hamburger logic in JS if needed */
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: rgba(10, 10, 12, 0.95);
+        backdrop-filter: blur(25px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
     }
     
     .hero-split {
-        flex-direction: column;
+        flex-direction: column-reverse;
         text-align: center;
-        gap: 3rem;
-        padding-top: 4rem;
+        gap: 4rem;
+        padding-top: 6rem;
     }
 
     .hero-info {
@@ -1360,17 +1404,23 @@ h1, h2, h3, h4 {
     }
 
     .profile-frame-large {
-        width: 300px;
-        height: 400px;
+        width: 280px;
+        height: 380px;
+    }
+
+    .bento-skills {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: auto;
+    }
+
+    .skill-react, .skill-git {
+        grid-column: span 2;
     }
     
     .project-reveal-item {
-        flex-direction: column;
-        gap: 2rem;
-    }
-    
-    .project-reveal-item.reverse {
-        flex-direction: column;
+        flex-direction: column !important;
+        gap: 3rem;
+        margin-bottom: 6rem;
     }
     
     .timeline-line {
@@ -1382,23 +1432,81 @@ h1, h2, h3, h4 {
         text-align: left !important;
         padding-left: 50px !important;
         padding-right: 0 !important;
+        margin-bottom: 4rem;
     }
     
     .timeline-dot {
-        left: 10px !important;
+        left: 0 !important;
+    }
+
+    .year-marker {
+        font-size: 4rem;
+        top: -30px;
+    }
+
+    .timeline-item.left .year-marker,
+    .timeline-item.right .year-marker {
+        left: 50px;
+        right: auto;
+    }
+
+    .timeline-img {
+        height: 300px;
+    }
+
+    .split-layout {
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .about-text .section-title {
+        text-align: center;
     }
 }
 
 @media (max-width: 600px) {
-    .skills-grid {
+    .nav-links {
+        width: 100%;
+    }
+
+    .hero-name {
+        font-size: 3rem;
+    }
+
+    .role-container {
+        font-size: 1.4rem;
+    }
+
+    .bento-skills {
         grid-template-columns: 1fr;
     }
-    
-    .achievement-item {
-        min-width: 280px;
+
+    .skill-react, .skill-logic, .skill-db, .skill-git, .skill-design {
+        grid-column: span 1;
     }
-    
-    .hero-name {
-        font-size: 3.5rem;
+
+    .achievement-item {
+        min-width: 300px;
+        height: auto;
+    }
+
+    .achievement-item .timeline-img {
+        height: 200px;
+    }
+
+    .contact-inner {
+        padding: 0 1rem;
+    }
+
+    .social-links {
+        gap: 2rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
     }
 }
