@@ -244,7 +244,4 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
-
-        });
-    });
 });
