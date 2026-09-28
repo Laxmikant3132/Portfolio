@@ -1364,211 +1364,118 @@ h1, h2, h3, h4 {
 
 /* Mobile Responsiveness Enhanced */
 @media (max-width: 992px) {
-    .nav-container {
-        padding: 0 1.5rem;
-    }
-    
-    .menu-toggle {
-        display: flex;
-        position: relative;
-        z-index: 2001;
+    :root {
+        --padding-container: 1.2rem;
+        --section-margin: 60px; /* Reduced huge gaps */
     }
 
+    .nav-container { padding: 0 1.2rem; }
+    
+    .menu-toggle { display: flex; position: relative; z-index: 2001; }
+
     .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 75%;
+        position: fixed; top: 0; right: -100%;
+        width: 100%; /* Full width menu on mobile */
         height: 100vh;
         background: rgba(10, 10, 12, 0.98);
         backdrop-filter: blur(25px);
-        border-left: 1px solid rgba(255, 255, 255, 0.1);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2.5rem;
-        transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        flex-direction: column; justify-content: center; align-items: center;
+        gap: 2rem; transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 2000;
-        box-shadow: -15px 0 35px rgba(0, 0, 0, 0.5);
     }
 
-    .nav-links.active {
-        right: 0;
-    }
+    .nav-links.active { right: 0; }
 
-    .nav-links a {
-        font-size: 1.8rem;
-        font-weight: 700;
-        letter-spacing: 2px;
-        width: 100%;
+    .nav-links a { font-size: 1.5rem; }
+
+    /* Fix About Section */
+    .split-layout {
+        flex-direction: column;
+        gap: 3rem;
         text-align: center;
-        padding: 1rem;
-    }
-
-    .nav-links li {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-
-    .nav-cta {
-        padding: 1rem 3rem;
-        font-size: 1.2rem;
     }
     
-    .hero-split {
-        flex-direction: column; /* Text on top, Photo below */
-        text-align: center;
-        padding-top: 4rem;
-        gap: 3.5rem;
-    }
+    .about-text .section-title { text-align: center; }
 
-    .hero-info {
-        order: 1;
-        width: 100%;
-    }
-
-    .hero-visual {
-        order: 2;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-top: 1rem;
-    }
-
-    .profile-frame-large {
-        width: 260px;
-        height: 340px;
-        margin: 0 auto;
-    }
-
-    .hero-name {
-        font-size: 3.2rem;
-        line-height: 1.1;
-    }
-
-    .role-container {
-        font-size: 1.5rem;
-        margin-bottom: 2rem;
-    }
-
-    .hero-btns {
-        flex-direction: column;
-        gap: 1.2rem;
-        align-items: center;
-    }
-
-    .bento-skills {
+    /* Fix Skills Grid Overflow */
+    .skills-grid {
         grid-template-columns: 1fr;
-        grid-auto-rows: auto; /* Allow cards to grow with content */
-        gap: 1.5rem;
     }
 
-    .bento-card {
-        padding: 1.8rem;
-        border-radius: 24px;
-        align-items: center;
-        text-align: center;
-        min-height: auto;
-    }
-
-    .skill-react, .skill-logic, .skill-db, .skill-git, .skill-design {
-        grid-column: span 1;
-        grid-row: span 1;
-    }
-
-    .skill-react, .skill-git {
+    .hero-split {
         flex-direction: column;
-        gap: 1rem;
+        text-align: center;
+        padding-top: 2rem;
+        gap: 2rem;
     }
 
-    .skill-react .bento-icon,
-    .skill-git .bento-icon {
-        font-size: 3.5rem;
-        margin-bottom: 0.5rem;
-    }
+    .hero-info { order: 1; width: 100%; }
+    .hero-visual { order: 2; width: 100%; justify-content: center; margin-top: 1rem; }
 
-    .bento-icon {
-        margin-bottom: 1rem;
-        font-size: 3rem;
-    }
+    .profile-frame-large { width: 240px; height: 300px; margin: 0 auto; }
 
-    .skill-tags {
-        justify-content: center;
+    .hero-name { font-size: 2.5rem; line-height: 1.2; }
+    .role-container { font-size: 1.2rem; margin-bottom: 2rem; }
+    .hero-tagline { font-size: 1rem; }
+    .hero-btns { flex-direction: column; gap: 1rem; align-items: center; }
+    .btn { width: 100%; text-align: center; padding: 1rem; }
+
+    .bento-skills { grid-template-columns: 1fr; grid-auto-rows: auto; gap: 1rem; }
+    .bento-card { padding: 1.5rem; border-radius: 20px; text-align: center; }
+    
+    .skill-react, .skill-logic, .skill-db, .skill-git, .skill-design {
+        grid-column: span 1; grid-row: span 1;
     }
     
+    .skill-react, .skill-git { flex-direction: column; gap: 1rem; }
+
     .project-reveal-item {
         flex-direction: column !important;
-        gap: 2.5rem;
-        margin-bottom: 5rem;
+        gap: 2rem;
+        margin-bottom: 4rem;
     }
 
-    .project-content-side {
-        text-align: center;
-    }
-
-    .proj-badges, .project-links-minimal {
-        justify-content: center;
-    }
+    .project-content-side { text-align: center; }
+    .proj-badges, .project-links-minimal { justify-content: center; }
     
-    .timeline-line {
-        left: 15px;
-        transform: none;
-    }
+    .timeline { padding: 1rem 0; margin-top: 2rem; }
+    .timeline-line { left: 15px; transform: none; }
     
     .timeline-item {
         width: 100% !important;
-        padding-left: 45px !important;
-        padding-right: 15px !important;
+        padding-left: 40px !important;
+        padding-right: 0 !important;
         margin-bottom: 3rem;
         text-align: left !important;
         left: 0 !important;
     }
     
-    .timeline-dot {
-        left: 5px !important;
-        transform: none !important;
-    }
+    .timeline-dot { left: -5px !important; transform: none !important; width: 30px; height: 30px; font-size: 0.8rem; }
+    
+    .timeline-content { padding: 1.5rem; }
+    .timeline-content h3 { font-size: 1.4rem; }
+    .timeline-content p { font-size: 1rem; }
+    .year-marker { display: none; } /* Hide large numbers on mobile */
+    .timeline-item.left .timeline-dot { right: auto; } /* Fix dot position */
 
-    .timeline-item::after {
-        display: none; /* Hide desktop connectors */
-    }
+    .timeline-img { height: 200px; margin-top: 1rem; }
 
-    .timeline-content {
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-
-    .timeline-img {
-        height: 250px;
-    }
-
-    .achievements-track {
-        gap: 1.2rem;
-        padding: 1.5rem 0.5rem;
-    }
-
-    .achievement-item {
-        min-width: 90vw;
-        height: 480px; /* More compact for mobile */
-        border-radius: 20px;
-    }
-
-    .achievement-item .timeline-img {
-        height: 180px; /* Adjusting photo height inside cards */
-    }
+    .achievements-track { gap: 1rem; padding: 1rem 0; }
+    .achievement-item { min-width: 85vw; height: 420px; }
+    .achievement-item .timeline-img { height: 180px; }
+    .ach-content { padding: 1.2rem; }
+    .ach-content h4 { font-size: 1.2rem; }
+    
+    .contact-inner { width: 100%; }
+    .form-group input, .form-group textarea { font-size: 1rem; }
+    .submit-btn { width: 100%; justify-content: center; }
 }
 
 @media (max-width: 600px) {
-    .hero-name {
-        font-size: 2.8rem;
-    }
-
-    .section-title {
-        font-size: 2.2rem;
-    }
-
-    .premium-text {
-        font-size: 1.1rem;
-    }
+    .section-title { font-size: 2rem; }
+    .premium-text { font-size: 1rem; }
+    .nav-container { padding: 0 1rem; }
+    .project-content-side h3 { font-size: 1.8rem; }
+    .coming-soon-card { padding: 2rem 1rem; }
+    .coming-soon-card h3 { font-size: 1.8rem; }
 }
