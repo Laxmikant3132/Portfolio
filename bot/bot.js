@@ -121,15 +121,16 @@ bot.command('delete', async (ctx) => {
             });
             const scriptContent = Buffer.from(scriptFile.data.content, 'base64').toString('utf-8');
             
-            // Extract image names and descriptions using a simple regex
-            const regex = /image:\s*["'](achievement_[^"']+)["'][^}]*?description:\s*["']([^"']+)["']/g;
+            // Extract image names and titles using a simple regex
+            const regex = /image:\s*["'](achievement_[^"']+)["'][^}]*?title:\s*["']([^"']*)["']/g;
             let match;
             let list = "Here are your bot-uploaded achievements:\n\n";
             let found = false;
             
             while ((match = regex.exec(scriptContent)) !== null) {
                 found = true;
-                list += `📌 **${match[2]}**\n👉 Copy this to delete: \`/delete ${match[1]}\`\n\n`;
+                const displayTitle = match[2] || "New Achievement";
+                list += `📌 **${displayTitle}**\n👉 Copy this to delete: \`/delete ${match[1]}\`\n\n`;
             }
             
             if (!found) {
