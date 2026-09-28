@@ -243,5 +243,65 @@ document.addEventListener('DOMContentLoaded', () => {
                 glow.style.top = `${y}px`;
             });
         }
-    });
+    /* --- Dynamic Achievements Rendering --- */
+    const achievementsData = [
+        {
+            image: "achievement1.png",
+            alt: "Hackathon Winner",
+            title: "Coding Event Winner",
+            description: "Secured 1st Place in a regional technical event competition."
+        },
+        {
+            image: "journey3.png",
+            alt: "3rd Sem Rank",
+            title: "3rd Sem Rank Holder",
+            description: "Secured 3rd Rank in BCA 3rd Sem with a 9.06 SGPA at KLE Society's BCA College."
+        },
+        {
+            image: "uipath_champion.jpeg",
+            alt: "UiPath Champion",
+            title: "UiPath Student Champion",
+            description: "Recognized for excellence in automation and RPA developer community contributions."
+        },
+        {
+            image: "hackathon1.jpg",
+            alt: "Innoverse 2.0 Winner",
+            title: "National Hackathon - Innoverse 2.0",
+            description: "Participated and excelled in the 24-hours National Level Hackathon at Gogte Institute of Technology."
+        },
+        {
+            image: "hackathon2.jpg",
+            alt: "Hackfest 2025 Winner",
+            title: "National Hackathon Winner - Hackfest 2025",
+            description: "Won 1st Place at S. G. Balekundri Institute of Technology National Level Hackathon."
+        },
+        {
+            image: "hackathon3.jpg",
+            alt: "Hackaur 2025 Runner Up",
+            title: "2nd Prize - National Hackathon",
+            description: "Secured 2nd Prize at Hackaur National Level Hackathon Competition."
+        }
+    ];
+
+    const achievementsTrack = document.getElementById('dynamic-achievements-track');
+    if (achievementsTrack) {
+        achievementsData.forEach(ach => {
+            const achievementElement = document.createElement('div');
+            achievementElement.classList.add('achievement-item', 'reveal');
+            
+            achievementElement.innerHTML = `
+                <div class="timeline-img">
+                    <img src="${ach.image}" alt="${ach.alt}">
+                </div>
+                <div class="ach-content">
+                    <h4>${ach.title}</h4>
+                    <p>${ach.description}</p>
+                </div>
+            `;
+            
+            achievementsTrack.appendChild(achievementElement);
+            // Observe the newly created element for reveal animation
+            revealObserver.observe(achievementElement);
+        });
+    }
 });
