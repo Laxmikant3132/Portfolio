@@ -301,12 +301,6 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "UiPath Student Developer Champion Recognized as a UiPath Student Developer Champion, exploring automation, AI, and RPA through the UiPath Student Developer Community."
         }
     ,
-        {
-            image: "achievement_1790614441433.png",
-            alt: "1st Place – Web Designing at NEXORA 1.0",
-            title: "1st Place – Web Designing at NEXORA 1.0",
-            description: "NEXORA 1.0 – Web Designing Winner Secured 1st Place in Web Designing with Suhana Multani.  Our college also secured the General Championship."
-        }
     // END_ACHIEVEMENTS
     ];
 
