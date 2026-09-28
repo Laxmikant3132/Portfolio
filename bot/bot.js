@@ -77,11 +77,13 @@ bot.on('photo', async (ctx) => {
         }`;
 
         // Find the exact place to inject this new data in script.js
-        // We replace the end of the array marker \n    ];
-        if (scriptContent.includes('\n    ];')) {
-            scriptContent = scriptContent.replace('\n    ];', newEntry + '\n    ];');
+        // Use a unique end-of-achievements-array marker
+        const endMarker = '// END_ACHIEVEMENTS';
+        if (scriptContent.includes(endMarker)) {
+            scriptContent = scriptContent.replace(endMarker, newEntry + '\n    ' + endMarker);
         } else {
-            scriptContent = scriptContent.replace('\r\n    ];', newEntry + '\r\n    ];');
+            // fallback: find the closing of the achievements array
+            scriptContent = scriptContent.replace(/\n    \];(\s*const achievementsTrack)/, newEntry + '\n    ];$1');
         }
 
         // 5. Upload the modified script.js back to GitHub

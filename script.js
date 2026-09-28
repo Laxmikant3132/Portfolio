@@ -288,6 +288,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Three Wins at AI Hackathon 2026",
             description: "AI Hackathon 2026 – Triple Achievement Secured 2nd Place in AI Story Creation and 3rd Place in AI Presentation and AI Quiz."
         }
+    // END_ACHIEVEMENTS
     ];
 
     const achievementsTrack = document.getElementById('dynamic-achievements-track');
