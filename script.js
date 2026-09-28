@@ -286,6 +286,13 @@ document.addEventListener('DOMContentLoaded', () => {
     ,
     ,
     ,
+    ,
+        {
+            image: "achievement_1790614026391.png",
+            alt: "UiPath Build Your Own Agent Challenge – Most Innovative Use Case",
+            title: "UiPath Build Your Own Agent Challenge – Most Innovative Use Case",
+            description: "Most Innovative Use Case Award – UiPath Built an AI agent to detect phishing emails, assess risks, and take real-time action to block threats."
+        }
     // END_ACHIEVEMENTS
     ];
 
