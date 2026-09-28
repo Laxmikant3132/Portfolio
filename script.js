@@ -282,7 +282,6 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "2nd Prize - National Hackathon",
             description: "Secured 2nd Prize at Hackaur National Level Hackathon Competition."
         },
-        },
         {
             image: "achievement_1790600373669.png",
             alt: "Three Wins at AI Hackathon 2026",

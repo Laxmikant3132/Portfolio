@@ -68,7 +68,7 @@ bot.on('photo', async (ctx) => {
         const cleanTitle = titleText.replace(/"/g, "'");
         const cleanDesc = descText.replace(/"/g, "'");
 
-        const newEntry = `        },
+        const newEntry = `,
         {
             image: "${imageFileName}",
             alt: "${cleanTitle}",
@@ -77,15 +77,11 @@ bot.on('photo', async (ctx) => {
         }`;
 
         // Find the exact place to inject this new data in script.js
-        const targetString = "        }\r\n    ];";
-        const fallbackTarget = "        }\n    ];";
-        
-        if (scriptContent.includes(targetString)) {
-            scriptContent = scriptContent.replace(targetString, newEntry + "\r\n    ];");
-        } else if (scriptContent.includes(fallbackTarget)) {
-            scriptContent = scriptContent.replace(fallbackTarget, newEntry + "\n    ];");
+        // We replace the end of the array marker \n    ];
+        if (scriptContent.includes('\n    ];')) {
+            scriptContent = scriptContent.replace('\n    ];', newEntry + '\n    ];');
         } else {
-             scriptContent = scriptContent.replace("    ];", newEntry + "\n    ];");
+            scriptContent = scriptContent.replace('\r\n    ];', newEntry + '\r\n    ];');
         }
 
         // 5. Upload the modified script.js back to GitHub
