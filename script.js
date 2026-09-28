@@ -293,6 +293,13 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "UiPath Build Your Own Agent Challenge – Most Innovative Use Case",
             description: "Most Innovative Use Case Award – UiPath Built an AI agent to detect phishing emails, assess risks, and take real-time action to block threats."
         }
+    ,
+        {
+            image: "achievement_1790614168543.png",
+            alt: "UiPath Student Developer Champion Kit",
+            title: "UiPath Student Developer Champion Kit",
+            description: "UiPath Student Developer Champion Recognized as a UiPath Student Developer Champion, exploring automation, AI, and RPA through the UiPath Student Developer Community."
+        }
     // END_ACHIEVEMENTS
     ];
 
