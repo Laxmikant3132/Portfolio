@@ -282,12 +282,6 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "2nd Prize - National Hackathon",
             description: "Secured 2nd Prize at Hackaur National Level Hackathon Competition."
         },
-        {
-            image: "achievement_1790598863418.png",
-            alt: "🏆 3 Wins at AI Hackathon 2026 — 2nd in AI Story Creation, 3rd in AI Presentation & 3rd in AI Quiz.",
-            title: "🏆 3 Wins at AI Hackathon 2026 — 2nd in AI Story Creation, 3rd in AI Presentation & 3rd in AI Quiz.",
-            description: ""
-        }
     ];
 
     const achievementsTrack = document.getElementById('dynamic-achievements-track');
