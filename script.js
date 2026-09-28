@@ -301,6 +301,13 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "UiPath Student Developer Champion Recognized as a UiPath Student Developer Champion, exploring automation, AI, and RPA through the UiPath Student Developer Community."
         }
     ,
+    ,
+        {
+            image: "achievement_1790614683573.png",
+            alt: "1st Prize – Web Designing Competition",
+            title: "1st Prize – Web Designing Competition",
+            description: "Colossus 6.0 – Web Designing Winner Secured 1st Prize in Web Designing at Colossus 6.0, contributing to our college’s Runner-Up – General Championship."
+        }
     // END_ACHIEVEMENTS
     ];
 
