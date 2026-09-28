@@ -207,6 +207,10 @@ bot.command('delete', async (ctx) => {
 
 bot.launch();
 
+// Dummy HTTP server to keep Render happy
+const http = require('http');
+http.createServer((req, res) => res.end('Bot is alive!')).listen(process.env.PORT || 3000);
+
 // Enable graceful stop
 process.once('SIGINT', () => bot.stop('SIGINT'));
 process.once('SIGTERM', () => bot.stop('SIGTERM'));
