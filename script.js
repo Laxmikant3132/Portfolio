@@ -243,6 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 glow.style.top = `${y}px`;
             });
         }
+    });
     /* --- Dynamic Achievements Rendering --- */
     const achievementsData = [
         {

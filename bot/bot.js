@@ -15,13 +15,8 @@ const bot = new Telegraf(token);
 
 console.log("Bot is starting... waiting for messages!");
 
-bot.on('message', async (ctx) => {
+bot.on('photo', async (ctx) => {
     const msg = ctx.message;
-
-    // We only want to process messages with photos
-    if (!msg.photo) {
-        return ctx.reply("Please send me an image of your achievement along with a caption describing it!");
-    }
 
     const caption = msg.caption || "New Achievement!";
     
@@ -66,14 +61,19 @@ bot.on('message', async (ctx) => {
         let scriptContent = Buffer.from(scriptFile.data.content, 'base64').toString('utf-8');
 
         // Create the new JS object entry
-        const cleanCaption = caption.replace(/"/g, "'").replace(/\n/g, ' ');
+        const lines = caption.split('\n').filter(line => line.trim() !== '');
+        const titleText = lines.length > 0 ? lines[0] : "New Achievement";
+        const descText = lines.length > 1 ? lines.slice(1).join(' ') : "";
         
+        const cleanTitle = titleText.replace(/"/g, "'");
+        const cleanDesc = descText.replace(/"/g, "'");
+
         const newEntry = `        },
         {
             image: "${imageFileName}",
-            alt: "New Achievement",
-            title: "LinkedIn Update",
-            description: "${cleanCaption}"
+            alt: "${cleanTitle}",
+            title: "${cleanTitle}",
+            description: "${cleanDesc}"
         }`;
 
         // Find the exact place to inject this new data in script.js
@@ -99,6 +99,105 @@ bot.on('message', async (ctx) => {
         });
             
         await ctx.reply("✅ Success! Your portfolio has been updated. The live site will refresh with your new achievement in about a minute.");
+
+    } catch (error) {
+        console.error(error);
+        await ctx.reply(`❌ An error occurred: ${error.message}`);
+    }
+});
+
+bot.command('delete', async (ctx) => {
+    const message = ctx.message.text;
+    const parts = message.split(' ');
+    
+    // If no filename is provided, list the achievements
+    if (parts.length < 2) {
+        try {
+            await ctx.reply("⏳ Fetching your achievements...");
+            const scriptFile = await octokit.repos.getContent({
+                owner,
+                repo,
+                path: 'script.js'
+            });
+            const scriptContent = Buffer.from(scriptFile.data.content, 'base64').toString('utf-8');
+            
+            // Extract image names and descriptions using a simple regex
+            const regex = /image:\s*["'](achievement_[^"']+)["'][^}]*?description:\s*["']([^"']+)["']/g;
+            let match;
+            let list = "Here are your bot-uploaded achievements:\n\n";
+            let found = false;
+            
+            while ((match = regex.exec(scriptContent)) !== null) {
+                found = true;
+                list += `📌 **${match[2]}**\n👉 Copy this to delete: \`/delete ${match[1]}\`\n\n`;
+            }
+            
+            if (!found) {
+                return ctx.reply("I couldn't find any recent bot-uploaded achievements in your portfolio.");
+            }
+            return ctx.replyWithMarkdown(list);
+        } catch (error) {
+            return ctx.reply(`❌ Could not fetch achievements: ${error.message}`);
+        }
+    }
+
+    const filename = parts[1];
+    
+    try {
+        await ctx.reply(`🗑️ Attempting to delete ${filename}...`);
+
+        const scriptFile = await octokit.repos.getContent({
+            owner,
+            repo,
+            path: 'script.js'
+        });
+        
+        const scriptSha = scriptFile.data.sha;
+        let scriptContent = Buffer.from(scriptFile.data.content, 'base64').toString('utf-8');
+
+        const regex = new RegExp(`\\s*\\{\\s*image:\\s*["']${filename}["'][\\s\\S]*?\\},?`, 'g');
+        const originalLength = scriptContent.length;
+        scriptContent = scriptContent.replace(regex, '');
+
+        if (scriptContent.length === originalLength) {
+            await ctx.reply(`⚠️ Could not find ${filename} in script.js. I'll still try to delete the image file.`);
+        } else {
+            scriptContent = scriptContent.replace(/,\\s*\\];/g, '\n    ];');
+            await octokit.repos.createOrUpdateFileContents({
+                owner,
+                repo,
+                path: 'script.js',
+                message: `🗑️ Remove achievement ${filename} via Telegram`,
+                content: Buffer.from(scriptContent).toString('base64'),
+                sha: scriptSha
+            });
+            await ctx.reply("✅ Removed entry from script.js.");
+        }
+
+        let fileSha;
+        try {
+            const imageFile = await octokit.repos.getContent({
+                owner,
+                repo,
+                path: filename
+            });
+            fileSha = imageFile.data.sha;
+        } catch (err) {
+            if (err.status === 404) {
+                return ctx.reply(`⚠️ Image file ${filename} not found on GitHub.`);
+            }
+            throw err;
+        }
+
+        await octokit.repos.deleteFile({
+            owner,
+            repo,
+            path: filename,
+            message: `🗑️ Delete ${filename} via Telegram`,
+            sha: fileSha
+        });
+        
+        await ctx.reply(`✅ Successfully deleted ${filename} from the repository!`);
 
     } catch (error) {
         console.error(error);
