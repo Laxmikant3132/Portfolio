@@ -308,6 +308,13 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "1st Prize – Web Designing Competition",
             description: "Colossus 6.0 – Web Designing Winner Secured 1st Prize in Web Designing at Colossus 6.0, contributing to our college’s Runner-Up – General Championship."
         }
+    ,
+        {
+            image: "achievement_1792755841309.png",
+            alt: "1st Prize – Web Designing Competition",
+            title: "1st Prize – Web Designing Competition",
+            description: "Colossus 6.0 – Web Designing Winner Secured 1st Prize in Web Designing at Colossus 6.0, contributing to our college’s Runner-Up – General Championship."
+        }
     // END_ACHIEVEMENTS
     ];
 
